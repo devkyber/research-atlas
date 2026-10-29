@@ -10,6 +10,18 @@ for(const c of d.chapters){if(!c.sections.length||!c.sources.length)throw Error(
 for(const e of d.concept_edges)if(!cs.has(e.from)||!cs.has(e.to)||e.kind!=='conceptual')throw Error('Invalid concept edge');
 for(const e of d.person_edges)if(!persons.has(e.from_id)||!persons.has(e.to_id)||!/^https?:\/\//.test(e.url))throw Error('Invalid sourced relationship');
 for(const p of d.papers){if(!p.title||!p.url)throw Error('Incomplete paper '+p.id);for(const id of p.version_ids||[])if(!ps.has(id))throw Error('Missing paper version '+id)}
+for(const x of d.atlas.labs){
+ for(const f of ['papers','citations','lineage'])if(!x.audit?.[f]?.reason||!x.audit[f].sources?.length)throw Error('Missing evidence audit '+x.id+' '+f);
+ for(const c of [x.citations,...(x.citations.additional_index_snapshots||[]),...(x.members||[]).map(m=>m.citations)]){
+  if(c?.count!=null&&(!Number.isInteger(c.count)||c.count<0||!c.provider||!c.source_url||!(c.checked||c.snapshot_date)))throw Error('Invalid citation snapshot '+x.id);
+ }
+ for(const id of x.paper_ids||[])if(!ps.has(id))throw Error('Missing scholar paper '+x.id);
+}
+for(const p of d.papers){
+ if(p.citation_count!=null&&(!Number.isInteger(p.citation_count)||p.citation_count<0||!p.citation_provider||!p.citation_checked||!p.metadata_source))throw Error('Invalid paper citation '+p.id);
+ for(const id of p.scholar_ids)if(!ss.has(id))throw Error('Missing associated scholar '+p.id);
+}
+for(const e of d.person_edges)if(e.kind==='Coauthored paper'&&(e.directed!==false||!ps.has(e.paper_id)))throw Error('Invalid coauthorship edge '+e.id);
 await fs.writeFile(path.join(root,'dist/data.js'),'window.RESEARCH = '+JSON.stringify(d).replaceAll('</','<\\/')+';\n');
 await fs.writeFile(path.join(root,'dist/downloads/research-data.json'),JSON.stringify(d,null,2)+'\n');
 console.log(JSON.stringify({status:'validated',...d.stats}));

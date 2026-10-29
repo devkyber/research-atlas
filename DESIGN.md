@@ -18,6 +18,6 @@ Directory: persistent search/filter controls / compact rows / full scholar pages
 
 The memorable element is a usable field map. No giant generic KPI hero, floating decorative shapes, gradient washes or identical marketing cards. Research counts belong in the coverage area. The reference sites' diagrams become a conceptual network rather than aerospace decoration.
 
-Connection semantics: concept edges are editorial explanations. Person edges are sourced PhD, postdoc, or named lab relationships; they never imply personal access. Historical/context-only people do not become eligible application targets. Topic matching is a navigational association, not evidence of collaboration.
+Connection semantics: concept edges are editorial explanations. Person edges distinguish sourced PhD, postdoc, named lab and coauthored-paper relationships; they never imply personal access. Shared-paper links are undirected and keep individual identity evidence. Historical/context-only people do not become eligible application targets. Topic matching is a navigational association, not evidence of collaboration.
 
 Review of design against brief: retain the references' visual restraint while replacing their launch-video opening with the actual object the user needs to explore: a map of research. Dense record tables are retained only where comparison benefits from them; chapters use open prose and specific examples.

@@ -17,7 +17,7 @@ The canonical content is `content/research-data.json`. After editing it, run `no
 - Eighteen explanatory chapters with method comparisons, assumptions, open questions, pitfalls, projects and primary-source links.
 - Seventy-three selected landmark reading records and the recent-publication associations from the application directory. Journal extensions are linked to their conference versions rather than silently collapsed.
 - Sixty-nine glossary entries and six learning routes.
-- A conceptual field map and a separately sourced training-relationship map.
+- A conceptual field map, six scholar-to-method reading guides, and a separately sourced relationship map with adviser, postdoctoral, lab and coauthored-paper links.
 - The existing 70-university, 787-record application directory, with its evidence gaps preserved.
 - Browser-local saved papers, chapters, paths, scholar shortlists, review marks and notes; JSON backup/import, including the earlier atlas checklist format.
 
@@ -27,9 +27,9 @@ Snapshot: 29 October 2026. The encyclopedia is an editorial learning resource, n
 
 Application universe: KAIST, SNU, POSTECH and Yonsei; US and European universities with QS overall 2027 rank at least as high as POSTECH (#106). Historical scholars, important papers and conceptual references can be outside that universe without becoming application targets.
 
-Directory status remains 262 profiles with an attached selected paper, 136 profile-verified records without an attached paper, and 389 directory leads. There are 53 dated citation snapshots. Counts from different providers are not interchangeable. A missing count is not zero. Incoming, historical and adjacent-methodology records are labeled, and current supervision availability is not inferred from a faculty page.
+All 787 professor/group records have separate paper, citation and lineage source checks. 787 records have selected papers; 721 have numeric citation evidence (including separate member snapshots for combined groups). 185 records have an explicit doctoral/postdoctoral adviser or mentor link; 209 have at least one sourced personal relationship. The directory represents 791 individual researchers. Unresolved fields remain visible in the evidence checklist and `content/coverage-report.json`; they are not invented or treated as zero. Counts from different providers remain separate. Incoming, historical and adjacent-methodology records are labeled, and current supervision availability is not inferred from a faculty page.
 
-Conceptual links do not assert personal relationships. Human edges cite explicit PhD, postdoctoral or named-lab evidence. A source describing a lab affiliation is not silently promoted to direct personal mentorship. The displayed graph is a documented subset, not a complete genealogy. Topic matches and paper associations do not imply equal contribution or a collaboration between every displayed person.
+Conceptual links do not assert personal relationships. Training edges cite explicit PhD, postdoctoral or named-lab evidence. Coauthor edges require an individually attributed selected-paper association or a reviewed OpenAlex author ID on the exact indexed work. Author-name substring matches never establish an edge. Coauthored-paper links are undirected, with their identity evidence retained in the data. A source describing a lab affiliation is not silently promoted to direct personal mentorship. The displayed graph is a documented subset, not a complete genealogy. Topic matches and paper associations do not imply equal contribution or a collaboration between every displayed person.
 
 Personal notes remain in browser local storage. Export a backup before moving devices or clearing storage. The HTML reading desk and the downloaded Excel checklist do not automatically synchronize. No emails or applications are sent by the site.
 
@@ -46,4 +46,4 @@ Pretendard is distributed under the SIL Open Font License; see `dist/assets/OFL.
 
 ## Validation
 
-Content IDs, chapter-paper references and sourced graph edges are validated by the data build. Browser checks cover navigation, map selection, search, filters, scholar and paper details, reading-desk persistence and backup/import, and mobile width. A separate targeted content review corrected three conceptual ambiguities; it is not a proof audit or exhaustive verification of every record.
+Content IDs, chapter-paper references and sourced graph edges are validated by the data build. Browser checks cover navigation, map selection, search, filters, scholar and paper details, reading-desk persistence and backup/import, and mobile width. Independent targeted reviews checked conceptual claims, namesake contamination, publication status, and graph identity joins; they are not proof audits or exhaustive verification of every work in an author index.
