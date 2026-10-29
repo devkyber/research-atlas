@@ -10,7 +10,7 @@ A static, searchable encyclopedia of control, autonomy and robot learning. Built
 
 Serve `dist/` with any static HTTP server. The generated site also supports opening `dist/index.html` directly; all research data and the font are local. No account, API key, analytics service or database is needed for the website itself. Hosted access is managed separately by Sites.
 
-The canonical content is `content/research-data.json`. After editing it, run `node scripts/build-data.mjs` to validate IDs and references and regenerate `dist/data.js` and the downloadable JSON. Interface source is `dist/app.js`, `dist/style.css` and `dist/index.html`. No dependency installation or framework build is required.
+The canonical content is `content/research-data.json`. After editing it, run `node scripts/build-data.mjs` to validate IDs and references and regenerate `dist/data.js` and the downloadable JSON. Interface source is `dist/app.js`, `dist/career.js`, `dist/style.css` and `dist/index.html`. No dependency installation or framework build is required.
 
 ## What is included
 
@@ -19,6 +19,7 @@ The canonical content is `content/research-data.json`. After editing it, run `no
 - Sixty-nine glossary entries and six learning routes.
 - A conceptual field map, six scholar-to-method reading guides, and a separately sourced relationship map with adviser, postdoctoral, lab and coauthored-paper links.
 - The existing 70-university, 787-record application directory, with its evidence gaps preserved.
+- A research-entry comparison view with sourced faculty appointment dates, current institutional appointments, internship/graduate routes and carefully attributed student/alumni evidence.
 - Browser-local saved papers, chapters, paths, scholar shortlists, review marks and notes; JSON backup/import, including the earlier atlas checklist format.
 
 ## Scope and evidence
@@ -28,6 +29,10 @@ Snapshot: 29 October 2026. The encyclopedia is an editorial learning resource, n
 Application universe: KAIST, SNU, POSTECH and Yonsei; US and European universities with QS overall 2027 rank at least as high as POSTECH (#106). Historical scholars, important papers and conceptual references can be outside that universe without becoming application targets.
 
 All 787 professor/group records have separate paper, citation and lineage source checks. 787 records have selected papers; 721 have numeric citation evidence (including separate member snapshots for combined groups). 185 records have an explicit doctoral/postdoctoral adviser or mentor link; 209 have at least one sourced training or lab role (coauthored-paper links are counted separately in the graph). The directory represents 791 individual researchers. Unresolved fields remain visible in the evidence checklist and `content/coverage-report.json`; they are not invented or treated as zero. Counts from different providers remain separate. Incoming, historical and adjacent-methodology records are labeled, and current supervision availability is not inferred from a faculty page.
+
+
+
+Appointment-history review: 787 of 787 records have source checks or retrieval attempts logged; 532 have an earliest documented faculty year and 577 have a current institutional appointment year. The four combined records retain individual dates in their member profiles. Across 791 individual researchers, 537 have an earliest faculty year and 582 have a current institutional appointment. 27 labs received dedicated recruitment/environment review, including 16 with named student/alumni sources. 6 have actual experience narratives, interviews or thesis acknowledgments; biographies and placements are counted separately. Remaining environment reviews are explicitly pending. `content/career-coverage-report.json` lists every record and its evidence state. 145 career records remain source-screened only, with no resolved appointment dates; this is not an exhaustive CV verification. Appointment dates do not establish admission availability or mentoring quality.
 
 Conceptual links do not assert personal relationships. Training edges cite explicit PhD, postdoctoral or named-lab evidence. Coauthor edges require an individually attributed selected-paper association or a reviewed OpenAlex author ID on the exact indexed work. Author-name substring matches never establish an edge. Coauthored-paper links are undirected, with their identity evidence retained in the data. A source describing a lab affiliation is not silently promoted to direct personal mentorship. The displayed graph is a documented subset, not a complete genealogy. Topic matches and paper associations do not imply equal contribution or a collaboration between every displayed person.
 

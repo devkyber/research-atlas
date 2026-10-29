@@ -11,6 +11,12 @@ for(const e of d.concept_edges)if(!cs.has(e.from)||!cs.has(e.to)||e.kind!=='conc
 for(const e of d.person_edges)if(!persons.has(e.from_id)||!persons.has(e.to_id)||!/^https?:\/\//.test(e.url))throw Error('Invalid sourced relationship');
 for(const p of d.papers){if(!p.title||!p.url)throw Error('Incomplete paper '+p.id);for(const id of p.version_ids||[])if(!ps.has(id))throw Error('Missing paper version '+id)}
 for(const x of d.atlas.labs){
+ if(!x.career||!x.career_audit?.reason||!x.environment_audit?.reason)throw Error('Missing career/environment audit '+x.id);
+ for(const item of [x,...(x.members||[])])for(const field of ['first_faculty','current_institution','full_professor']){
+  const e=item.career?.[field];
+  if(e?.year!=null&&(!Number.isInteger(e.year)||e.year<1900||e.year>2026||!e.sources?.length))throw Error('Invalid completed appointment '+x.id+' '+field);
+ }
+ for(const evidence of x.environment?.evidence||[])if(!evidence.claim||!evidence.source_type||!/^https?:\/\//.test(evidence.url))throw Error('Invalid environment evidence '+x.id);
  for(const f of ['papers','citations','lineage'])if(!x.audit?.[f]?.reason||!x.audit[f].sources?.length)throw Error('Missing evidence audit '+x.id+' '+f);
  for(const c of [x.citations,...(x.citations.additional_index_snapshots||[]),...(x.members||[]).map(m=>m.citations)]){
   if(c?.count!=null&&(!Number.isInteger(c.count)||c.count<0||!c.provider||!c.source_url||!(c.checked||c.snapshot_date)))throw Error('Invalid citation snapshot '+x.id);

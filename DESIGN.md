@@ -9,7 +9,7 @@ Palette: paper #FFFFFF, blue wash #F0F6FC, pastel blue #C7E0F6, selected blue #9
 Type: locally bundled SIL-licensed Pretendard, 16px body/1.65, 14px secondary, 38–70px headings. Long reading text stays around 68ch. Sans-serif throughout to match the references. No all-caps eyebrow decoration or arbitrary numbered sections.
 
 Layout:
-Header: Research Atlas / Field map / Encyclopedia / Scholars / Papers / Learn
+Header: Research Atlas / Field map / Encyclopedia / Scholars / Papers / Join a lab
 Overview: large research question + concise introduction
 Map: interactive 18-topic diagram + selected-topic explanation
 Below: selected reading routes + evidence/coverage summary
@@ -21,3 +21,5 @@ The memorable element is a usable field map. No giant generic KPI hero, floating
 Connection semantics: concept edges are editorial explanations. Person edges distinguish sourced PhD, postdoc, named lab and coauthored-paper relationships; they never imply personal access. Shared-paper links are undirected and keep individual identity evidence. Historical/context-only people do not become eligible application targets. Topic matching is a navigational association, not evidence of collaboration.
 
 Review of design against brief: retain the references' visual restraint while replacing their launch-video opening with the actual object the user needs to explore: a map of research. Dense record tables are retained only where comparison benefits from them; chapters use open prose and specific examples.
+
+Research-entry view: an open comparison table with year and evidence filters. Profile appointment milestones use quiet blue rules. Recruitment and environment sections expose source type, date, uncertainty and route conditions. Unknowns stay visible. No reputation score or visual ranking is inferred from age, citation totals or alumni destinations. Reading paths remain in the secondary navigation.
